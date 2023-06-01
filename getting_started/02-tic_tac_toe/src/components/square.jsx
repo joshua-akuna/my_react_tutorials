@@ -7,8 +7,10 @@ import '../App.css'
  *      values of a square.
  * Return: returns a button (square element) displaying a value.
  */
-export default function Square({ value, clickHandler }){
+export default function Square({ value, handleClick }){
     return (
-        <button className='square' onClick={clickHandler}> { value } </button>
+        <button className='square' onClick={ handleClick }>
+            { value }
+        </button>
     )
 }
