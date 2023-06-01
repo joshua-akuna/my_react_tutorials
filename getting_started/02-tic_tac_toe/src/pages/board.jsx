@@ -40,7 +40,9 @@ export default function Board(){
 
     return (
         <>
-        <h2 style={{color: winner? 'red' : 'blue'}}> {status} </h2>
+        <div>
+            <h2 style={{color: winner? 'red' : 'blue'}}> {status} </h2>
+        </div>
         <div className="flex col">
             <section className="flex row">
                 <Square value={ squares[0] } handleClick={ ()=>onSquareClick(0) }/>
