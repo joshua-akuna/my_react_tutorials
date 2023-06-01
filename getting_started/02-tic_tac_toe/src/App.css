@@ -1,0 +1,27 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.card { padding: 2em; }
+.flex{ display: flex; gap: 0; }
+.no-gap{ gap: 0; }
+.row { flex-direction: row; }
+.col{ flex-direction: column; }
+
+.square{
+  border: 2px solid black;
+  border-radius: 0.3rem;
+  font-size: 36px;
+  max-width: 150px;
+  width: 20vw;
+  aspect-ratio: 1;
+}
+
+.square:hover{
+  background-color: darkolivegreen;
+  color: white;
+  border: 2px solid black;
+}
