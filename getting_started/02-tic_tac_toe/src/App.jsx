@@ -1,11 +1,11 @@
 import { Routes, Route } from 'react-router-dom'
-import Board from './pages/board'
 import './App.css'
+import Game from './pages/game'
 
 function App() {
   return (
     <Routes>
-      <Route path='/' element={<Board />}/>
+      <Route path='/' element={<Game />}/>
     </Routes>
   )
 }

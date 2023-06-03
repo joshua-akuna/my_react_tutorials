@@ -1,11 +1,6 @@
-import { useState } from "react"
-import Square from "../components/square"
+import Square from "./square"
 
-export default function Board(){
-    // stores a boolean state to switch from 'X' to 'O'
-    const [isXNext, setIsXNext] = useState(true)
-    // stores an array of states for each Square element
-    const [squares, setSquares] = useState(Array(9).fill(null))
+export default function Board({ isXNext, squares, onPlay}){
     // stores the value of the winner if any
     const winner = determineWinner(squares)
     // checks if there's a winner and display a prompt
@@ -29,13 +24,12 @@ export default function Board(){
             return
         }
         // creates a new copy of the current square array
-        const newSquares = squares.slice()
+        const nextSquares = squares.slice()
         // updates an index of the new square array
-        newSquares[index] = isXNext? 'X' : 'O'
-        // replaces the current array with the new array
-        setSquares(newSquares)
-        // toggle the isXNext boolean variable
-        setIsXNext(!isXNext)
+        nextSquares[index] = isXNext? 'X' : 'O'
+        // calls the handleClick callback function on the
+        // Game component.
+        onPlay(nextSquares)
     }
 
     return (
@@ -77,7 +71,7 @@ export default function Board(){
             [1, 4, 7],
             [2, 5, 8],
             [0, 4, 8],
-            [2, 4, 6]
+            [2, 4, 6],
         ]
 
         // this algorithm checks if the values of the
